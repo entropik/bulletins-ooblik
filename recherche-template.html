@@ -815,259 +815,245 @@ table, td { color: #000000; } #u_body a { color: #4c6ef5; text-decoration: none;
 
 
 <style type="text/css">
-    @media only screen and (max-width: 599px) {
-        td[class="pattern"] table { width: 100%; }
-    }
-    @media only screen and (max-width: 600px) {
-        td[class="pattern"] .spacer { display: none; }
-        td[class="pattern"] .col{
-            margin-bottom: 20px !important;
-            width: 100% !important;
-            display: block !important;
-        }
-        td[class="pattern"] .col:first-child { margin-bottom: 30px; }
-
-        .products-area tr.product-row {
-            display: block !important;
-        }
+    /* CSS optimisé pour structure tableau - Compatible avec tous les clients email */
+    .products-area {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
     }
 
-    .products-area .single-product {
-        display: flex;
-        align-items: center;
+    .products-area table {
+        width: 100%;
+        border-collapse: collapse;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+    }
+
+    .products-area td {
+        vertical-align: top;
+        text-align: center;
+    }
+
+    .products-area .product-name a {
+        text-decoration: none !important;
+        color: #000000;
+        font-size: 16px;
         font-weight: bold;
+        line-height: 1.4;
     }
 
-    .products-area .single-product > .product-image {
-        padding-bottom: 0;
-        padding-right: 15px;
-    }
-
-    .products-area .single-product > .product-image img {
-        border-radius: 3px;
-    }
-
-    .products-area .single-product > .product-details {
-        width: auto;
-    }
-
-    .products-area .single-product > .product-details .product-name {
-        
-    }
-
-    .products-area .single-product > .product-details .product-price {
-        padding-top: 2px;
+    .products-area .product-price {
         color: #979a9f;
         font-size: 13px;
+        margin-top: 8px;
     }
 
-    .products-area .single-product > .product-details .product-price .compare-price {
-        padding-right: 4px;
+    .products-area .compare-price {
         text-decoration: line-through;
+        margin-right: 4px;
     }
 
-    .products-area .single-product > .product-details .product-name a {
-        text-decoration: none !important;
-        color: ;
-        font-size: 16px;
-    }
-
-    .products-area tr.product-row-wrapper:last-of-type tr.product-row {
-        padding-bottom: 0;
-    }
-    
-    .products-area tr.product-row {
-        display: flex;
-        flex-wrap: nowrap;
-        margin-left: 0;
-        margin-right: 0;
-        padding-bottom: 24px;
-    }
-
-    .products-area .col {
-        display: flex;
-        width: 33.333333333333%;
-    }
-
-    .products-area .single-product.type-vertical {
-        display: block;
-        width: 100%;
-    }
-    
-    .products-area .single-product.type-vertical .product-image {
-        padding-bottom: 10px;
-        padding-right: 0;
-        text-align: center;
-    }
-    
-    .products-area .single-product.type-vertical .product-details {
-        text-align: center;
+    /* Media queries pour responsive mobile */
+    @media only screen and (max-width: 599px) {
+        .products-area table,
+        .products-area tbody,
+        .products-area tr,
+        .products-area td {
+            display: block !important;
+            width: 100% !important;
+        }
+        
+        .products-area td {
+            padding: 10px !important;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .products-area td:last-child {
+            border-bottom: none;
+        }
     }
 </style>
 
 
 
 <div class="products-area">
-    <table cellpadding="0" cellspacing="0">
-                                    <tbody><tr class="product-row-wrapper">
-                    <td class="pattern" width="600" align="center">
-                        <table style="width:100%" cellpadding="0" cellspacing="0">
-                            <tbody><tr class="product-row" style="display: flex; flex-wrap: nowrap; margin-left: 0; margin-right: 0; padding-bottom: 24px;">
-            
-                                <td class="col" style="display: flex; width: 33.333333333333%;">
-                                    <div class="single-product type-vertical" style="align-items: center; font-weight: bold; display: block; width: 100%;">
-                                                                                    <div class="product-image" style="padding-bottom: 10px; padding-right: 0; text-align: center;">
-                                                <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-add-multiple-products-to-cart-url/?mtke=484" target="_blank">
-                                                    <img src="https://www.businessbloomer.com/wp-content/uploads/2023/10/bbloomer-woocommerce-add-multiple-products-to-cart-url.png" style="border-radius: 3px; height: 120px;">
-                                                </a>
-                                            </div>
-                                        
-                                        <div class="product-details" style="width: auto; text-align: center;">
-                                                                                            <div class="product-name">
-                                                    <a class="button no-border-radius" href="https://www.businessbloomer.com/shop/plugins/woocommerce-add-multiple-products-to-cart-url/?mtke=484" target="_blank" style="text-decoration: none !important; font-size: 16px;">
-                                                        WooCommerce Add Multiple Products To Cart Via URL Mini-Plugin
-                                                    </a>
-                                                </div>
-                                            
-                                                                                    <div class="product-price" style="padding-top: 2px; color: #979a9f; font-size: 13px;">
-                                                                                                    €35.00
-                                                                                            </div>
-                                        
-                                        </div>
+    <!-- Première ligne de produits - Structure tableau pour compatibilité email -->
+    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0" style="margin-bottom: 24px;">
+        <tbody>
+            <tr>
+                <!-- Produit 1 -->
+                <td width="33.33%" align="center" valign="top" style="padding: 12px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                        <tbody>
+                            <tr>
+                                <td align="center" style="padding-bottom: 10px;">
+                                    <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-add-multiple-products-to-cart-url/?mtke=484" target="_blank">
+                                        <img src="https://www.businessbloomer.com/wp-content/uploads/2023/10/bbloomer-woocommerce-add-multiple-products-to-cart-url.png" style="border-radius: 3px; height: 120px; max-width: 120px; display: block;" alt="WooCommerce Add Multiple Products To Cart Via URL">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding: 10px;">
+                                    <div class="product-name" style="margin-bottom: 8px;">
+                                        <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-add-multiple-products-to-cart-url/?mtke=484" target="_blank" style="text-decoration: none !important; color: #000000; font-size: 16px; font-weight: bold;">
+                                            WooCommerce Add Multiple Products To Cart Via URL Mini-Plugin
+                                        </a>
+                                    </div>
+                                    <div class="product-price" style="color: #979a9f; font-size: 13px;">
+                                        €35.00
                                     </div>
                                 </td>
-                                
-                                <td class="col" style="display: flex; width: 33.333333333333%;">
-                                    <div class="single-product type-vertical" style="align-items: center; font-weight: bold; display: block; width: 100%;">
-                                                                                    <div class="product-image" style="padding-bottom: 10px; padding-right: 0; text-align: center;">
-                                                <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-change-product-quantity-checkout/?mtke=484" target="_blank">
-                                                    <img src="https://www.businessbloomer.com/wp-content/uploads/2023/04/bbloomer-woocommerce-change-quantity-checkout.png" style="border-radius: 3px; height: 120px;">
-                                                </a>
-                                            </div>
-                                        
-                                        <div class="product-details" style="width: auto; text-align: center;">
-                                                                                            <div class="product-name">
-                                                    <a class="button no-border-radius" href="https://www.businessbloomer.com/shop/plugins/woocommerce-change-product-quantity-checkout/?mtke=484" target="_blank" style="text-decoration: none !important; font-size: 16px;">
-                                                        WooCommerce Change Product Quantity On The Checkout Page Mini-Plugin
-                                                    </a>
-                                                </div>
-                                            
-                                                                                    <div class="product-price" style="padding-top: 2px; color: #979a9f; font-size: 13px;">
-                                                                                                    €23.00
-                                                                                            </div>
-                                        
-                                        </div>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                
+                <!-- Produit 2 -->
+                <td width="33.33%" align="center" valign="top" style="padding: 12px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                        <tbody>
+                            <tr>
+                                <td align="center" style="padding-bottom: 10px;">
+                                    <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-change-product-quantity-checkout/?mtke=484" target="_blank">
+                                        <img src="https://www.businessbloomer.com/wp-content/uploads/2023/04/bbloomer-woocommerce-change-quantity-checkout.png" style="border-radius: 3px; height: 120px; max-width: 120px; display: block;" alt="WooCommerce Change Product Quantity On The Checkout Page">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding: 10px;">
+                                    <div class="product-name" style="margin-bottom: 8px;">
+                                        <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-change-product-quantity-checkout/?mtke=484" target="_blank" style="text-decoration: none !important; color: #000000; font-size: 16px; font-weight: bold;">
+                                            WooCommerce Change Product Quantity On The Checkout Page Mini-Plugin
+                                        </a>
+                                    </div>
+                                    <div class="product-price" style="color: #979a9f; font-size: 13px;">
+                                        €23.00
                                     </div>
                                 </td>
-                                
-                                <td class="col" style="display: flex; width: 33.333333333333%;">
-                                    <div class="single-product type-vertical" style="align-items: center; font-weight: bold; display: block; width: 100%;">
-                                                                                    <div class="product-image" style="padding-bottom: 10px; padding-right: 0; text-align: center;">
-                                                <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-remove-product-tabs/?mtke=484" target="_blank">
-                                                    <img src="https://www.businessbloomer.com/wp-content/uploads/2025/02/bbloomer-woocommerce-remove-product-tabs.png" style="border-radius: 3px; height: 120px;">
-                                                </a>
-                                            </div>
-                                        
-                                        <div class="product-details" style="width: auto; text-align: center;">
-                                                                                            <div class="product-name">
-                                                    <a class="button no-border-radius" href="https://www.businessbloomer.com/shop/plugins/woocommerce-remove-product-tabs/?mtke=484" target="_blank" style="text-decoration: none !important; font-size: 16px;">
-                                                        WooCommerce Remove Tabs From Single Product Page Mini-Plugin
-                                                    </a>
-                                                </div>
-                                            
-                                                                                    <div class="product-price" style="padding-top: 2px; color: #979a9f; font-size: 13px;">
-                                                                                                    €19.00
-                                                                                            </div>
-                                        
-                                        </div>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                
+                <!-- Produit 3 -->
+                <td width="33.33%" align="center" valign="top" style="padding: 12px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                        <tbody>
+                            <tr>
+                                <td align="center" style="padding-bottom: 10px;">
+                                    <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-remove-product-tabs/?mtke=484" target="_blank">
+                                        <img src="https://www.businessbloomer.com/wp-content/uploads/2025/02/bbloomer-woocommerce-remove-product-tabs.png" style="border-radius: 3px; height: 120px; max-width: 120px; display: block;" alt="WooCommerce Remove Tabs From Single Product Page">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding: 10px;">
+                                    <div class="product-name" style="margin-bottom: 8px;">
+                                        <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-remove-product-tabs/?mtke=484" target="_blank" style="text-decoration: none !important; color: #000000; font-size: 16px; font-weight: bold;">
+                                            WooCommerce Remove Tabs From Single Product Page Mini-Plugin
+                                        </a>
+                                    </div>
+                                    <div class="product-price" style="color: #979a9f; font-size: 13px;">
+                                        €19.00
                                     </div>
                                 </td>
-                                        </tr>
-                        </tbody></table>
-                    </td>
-                </tr>
-                                                <tr class="product-row-wrapper">
-                    <td class="pattern" width="600" align="center">
-                        <table style="width:100%" cellpadding="0" cellspacing="0">
-                            <tbody><tr class="product-row" style="display: flex; flex-wrap: nowrap; margin-left: 0; margin-right: 0; padding-bottom: 0;">
-            
-                                <td class="col" style="display: flex; width: 33.333333333333%;">
-                                    <div class="single-product type-vertical" style="align-items: center; font-weight: bold; display: block; width: 100%;">
-                                                                                    <div class="product-image" style="padding-bottom: 10px; padding-right: 0; text-align: center;">
-                                                <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-disable-payments-by-country/?mtke=484" target="_blank">
-                                                    <img src="https://www.businessbloomer.com/wp-content/uploads/2023/04/woocommerce-toggle-payments-by-country.png" style="border-radius: 3px; height: 120px;">
-                                                </a>
-                                            </div>
-                                        
-                                        <div class="product-details" style="width: auto; text-align: center;">
-                                                                                            <div class="product-name">
-                                                    <a class="button no-border-radius" href="https://www.businessbloomer.com/shop/plugins/woocommerce-disable-payments-by-country/?mtke=484" target="_blank" style="text-decoration: none !important; font-size: 16px;">
-                                                        WooCommerce Toggle Payments By Country/State Mini-Plugin
-                                                    </a>
-                                                </div>
-                                            
-                                                                                    <div class="product-price" style="padding-top: 2px; color: #979a9f; font-size: 13px;">
-                                                                                                    €29.00
-                                                                                            </div>
-                                        
-                                        </div>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Deuxième ligne de produits - Structure tableau pour compatibilité email -->
+    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+        <tbody>
+            <tr>
+                <!-- Produit 4 -->
+                <td width="33.33%" align="center" valign="top" style="padding: 12px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                        <tbody>
+                            <tr>
+                                <td align="center" style="padding-bottom: 10px;">
+                                    <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-disable-payments-by-country/?mtke=484" target="_blank">
+                                        <img src="https://www.businessbloomer.com/wp-content/uploads/2023/04/woocommerce-toggle-payments-by-country.png" style="border-radius: 3px; height: 120px; max-width: 120px; display: block;" alt="WooCommerce Toggle Payments By Country/State">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding: 10px;">
+                                    <div class="product-name" style="margin-bottom: 8px;">
+                                        <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-disable-payments-by-country/?mtke=484" target="_blank" style="text-decoration: none !important; color: #000000; font-size: 16px; font-weight: bold;">
+                                            WooCommerce Toggle Payments By Country/State Mini-Plugin
+                                        </a>
+                                    </div>
+                                    <div class="product-price" style="color: #979a9f; font-size: 13px;">
+                                        €29.00
                                     </div>
                                 </td>
-                                
-                                <td class="col" style="display: flex; width: 33.333333333333%;">
-                                    <div class="single-product type-vertical" style="align-items: center; font-weight: bold; display: block; width: 100%;">
-                                                                                    <div class="product-image" style="padding-bottom: 10px; padding-right: 0; text-align: center;">
-                                                <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-sales-by-state/?mtke=484" target="_blank">
-                                                    <img src="https://www.businessbloomer.com/wp-content/uploads/2025/03/bbloomer-woocommerce-sales-by-state.png" style="border-radius: 3px; height: 120px;">
-                                                </a>
-                                            </div>
-                                        
-                                        <div class="product-details" style="width: auto; text-align: center;">
-                                                                                            <div class="product-name">
-                                                    <a class="button no-border-radius" href="https://www.businessbloomer.com/shop/plugins/woocommerce-sales-by-state/?mtke=484" target="_blank" style="text-decoration: none !important; font-size: 16px;">
-                                                        WooCommerce Sales By State Mini-Plugin
-                                                    </a>
-                                                </div>
-                                            
-                                                                                    <div class="product-price" style="padding-top: 2px; color: #979a9f; font-size: 13px;">
-                                                                                                    <span class="compare-price" style="padding-right: 4px; text-decoration: line-through;">
-                                                        €39.00
-                                                    </span>
-
-                                                    €19.50
-                                                                                            </div>
-                                        
-                                        </div>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                
+                <!-- Produit 5 -->
+                <td width="33.33%" align="center" valign="top" style="padding: 12px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                        <tbody>
+                            <tr>
+                                <td align="center" style="padding-bottom: 10px;">
+                                    <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-sales-by-state/?mtke=484" target="_blank">
+                                        <img src="https://www.businessbloomer.com/wp-content/uploads/2025/03/bbloomer-woocommerce-sales-by-state.png" style="border-radius: 3px; height: 120px; max-width: 120px; display: block;" alt="WooCommerce Sales By State">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding: 10px;">
+                                    <div class="product-name" style="margin-bottom: 8px;">
+                                        <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-sales-by-state/?mtke=484" target="_blank" style="text-decoration: none !important; color: #000000; font-size: 16px; font-weight: bold;">
+                                            WooCommerce Sales By State Mini-Plugin
+                                        </a>
+                                    </div>
+                                    <div class="product-price" style="color: #979a9f; font-size: 13px;">
+                                        <span class="compare-price" style="padding-right: 4px; text-decoration: line-through;">
+                                            €39.00
+                                        </span>
+                                        €19.50
                                     </div>
                                 </td>
-                                
-                                <td class="col" style="display: flex; width: 33.333333333333%;">
-                                    <div class="single-product type-vertical" style="align-items: center; font-weight: bold; display: block; width: 100%;">
-                                                                                    <div class="product-image" style="padding-bottom: 10px; padding-right: 0; text-align: center;">
-                                                <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-remove-default-sorting-dropdown/?mtke=484" target="_blank">
-                                                    <img src="https://www.businessbloomer.com/wp-content/uploads/2023/04/bbloomer-woocommerce-remove-default-sorting-dropdown.png" style="border-radius: 3px; height: 120px;">
-                                                </a>
-                                            </div>
-                                        
-                                        <div class="product-details" style="width: auto; text-align: center;">
-                                                                                            <div class="product-name">
-                                                    <a class="button no-border-radius" href="https://www.businessbloomer.com/shop/plugins/woocommerce-remove-default-sorting-dropdown/?mtke=484" target="_blank" style="text-decoration: none !important; font-size: 16px;">
-                                                        WooCommerce Remove Default Sorting Dropdown Mini-Plugin
-                                                    </a>
-                                                </div>
-                                            
-                                                                                    <div class="product-price" style="padding-top: 2px; color: #979a9f; font-size: 13px;">
-                                                                                                    €15.00
-                                                                                            </div>
-                                        
-                                        </div>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                
+                <!-- Produit 6 -->
+                <td width="33.33%" align="center" valign="top" style="padding: 12px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                        <tbody>
+                            <tr>
+                                <td align="center" style="padding-bottom: 10px;">
+                                    <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-remove-default-sorting-dropdown/?mtke=484" target="_blank">
+                                        <img src="https://www.businessbloomer.com/wp-content/uploads/2023/04/bbloomer-woocommerce-remove-default-sorting-dropdown.png" style="border-radius: 3px; height: 120px; max-width: 120px; display: block;" alt="WooCommerce Remove Default Sorting Dropdown">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding: 10px;">
+                                    <div class="product-name" style="margin-bottom: 8px;">
+                                        <a href="https://www.businessbloomer.com/shop/plugins/woocommerce-remove-default-sorting-dropdown/?mtke=484" target="_blank" style="text-decoration: none !important; color: #000000; font-size: 16px; font-weight: bold;">
+                                            WooCommerce Remove Default Sorting Dropdown Mini-Plugin
+                                        </a>
+                                    </div>
+                                    <div class="product-price" style="color: #979a9f; font-size: 13px;">
+                                        €15.00
                                     </div>
                                 </td>
-                                        </tr>
-                        </tbody></table>
-                    </td>
-                </tr>
-                        </tbody></table>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 
